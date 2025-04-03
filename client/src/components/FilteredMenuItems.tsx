@@ -1,18 +1,17 @@
 import MenuCard from "@/components/MenuCard";
 import { useCart } from "../context/CartContext";
 import { IMenu } from "@/models/Menu";
-import useFetchMenuItems from "@/hooks/useFetchMenu";
+import { menuData } from "@/static/menuData";
 
 export default function FilteredMenuItems({ selectedCategory }: { selectedCategory: string }) {
-    const { data: menuItems } = useFetchMenuItems();
-    const filteredMenuItems = menuItems.filter((item) => item.category === selectedCategory);
+    const filteredMenuItems = menuData.filter((item) => item.category === selectedCategory);
     const { addToCart } = useCart();
 
     const handleAddToCart = (item: IMenu) => {
 
         addToCart({
             id: item._id,
-            menuItem: item.menuItem,
+            menuItem: item.name,
             cartAmount: 1,
             price: item.price,
             ingredients: item.ingredients,
@@ -27,11 +26,11 @@ export default function FilteredMenuItems({ selectedCategory }: { selectedCatego
             {filteredMenuItems.map((item: IMenu) => (
                 <MenuCard
                     key={item._id}
-                    menuName={item.menuItem}
+                    menuName={item.name}
                     menuDescription={item.ingredients.map((i) => i.ingredientName).join(", ")}
                     menuPrice={`$${item.price.toFixed(2)}`}
                     image={item.image}
-                    imageAlt={item.menuItem}
+                    imageAlt={item.name}
                     onClickTrigger={() => handleAddToCart(item)}
 
                 />

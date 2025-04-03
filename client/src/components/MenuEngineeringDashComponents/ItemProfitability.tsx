@@ -1,6 +1,6 @@
 import { IMenu } from "@/models/Menu";
 import ItemProfitabilityCard from "@/components/ItemProfitabilityCard";
-import useFetchMenuItems from "@/hooks/useFetchMenu";
+import { menuData } from "@/static/menuData";
 interface Ingredient {
     _id: string;
     name: string;
@@ -16,7 +16,6 @@ interface Item {
 }
 
 export default function ItemProfitability() {
-    const { data: menuItems } = useFetchMenuItems();
 
     return (
         <div className="">
@@ -24,10 +23,10 @@ export default function ItemProfitability() {
             <div className="container mx-auto md:pl-24 px-4 py-8 flex flex-col lg:flex-row gap-8 ">
                 {/* Menu Items */}
                 <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                    {menuItems.map((item: IMenu) => (
+                    {menuData.map((item: IMenu) => (
                         <ItemProfitabilityCard
                             key={item._id}
-                            menuName={item.menuItem}
+                            menuName={item.name}
                             menuDescription={item.ingredients.map((i) => i.ingredientName).join(", ")}
                             menuPrice={`$${item.price.toFixed(2)}`}
                         />

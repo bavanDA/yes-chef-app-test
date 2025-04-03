@@ -24,6 +24,8 @@
 
 A smart restaurant kitchen management system where users can track orders from the POS to the kitchen. It manages the inventory in real-time, deducting ingredients automatically with each kitchen order completed. The Yes Chef application predicts preparation recommendations using historical order patterns based on the data of the archived kitchen orders. Using those archived orders and the inventory, the app can display the profit per dish, track waste metrics, and track ingredient costs. It also automatically reorders ingredients whenever they hit the ingredient threshold levels through integrating with supplier APIs.
 
+[![Yes Chef main heading with the description below reading smart restaraunt management system application both in white text above a restaurant background](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eg6onvylyr7pqalf338r.png)](https://www.youtube.com/watch?v=ZHcfu7PNwPE&ab_channel=choir241)
+
 # Team:
 
 ## Leads:
@@ -52,9 +54,11 @@ A smart restaurant kitchen management system where users can track orders from t
 
 3. Ensure you're on the [latest Node version](https://nodejs.org/en/download)
 
-4. Create your `.env` file in the root folder and add your environment variables here (should look like `.env`). A MongoDB connection string and Spoonacular API key should be added.
+4. Create your `.env` file in the config folder and add your environment variables here (should look like `./config/.env`). Take a look at .env.example to see what env variables you need.
 
-5. To run the project (client and server) run `npm start` in root
+5. For the Spoonacular API Key, make sure to create a (spoonacular account)[https://spoonacular.com/food-api/console#Plan] and create your own spoonacular api key.
+
+6. To run the project (client and server) run `npm start` in root
 
 ## MVP requirements
 

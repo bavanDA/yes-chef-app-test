@@ -2,18 +2,17 @@ import { useState, Suspense } from "react";
 import { useNavigate } from 'react-router-dom';
 import CategoryNav from "../components/CategoryNav";
 import MenuCard from "@/components/MenuCard";
-import  useFetchMenuItems  from "../hooks/useFetchMenu"; // Import from the combined file
 import { IMenu } from "@/models/Menu";
 import WasteTable from "@/components/WasteTable"
 import FilteredMenuItems from "@/components/FilteredMenuItems";
+import { menuData } from "@/static/menuData";
 
 export default function Reports() {
-    const { data: menuItems, isLoading, isError, error } = useFetchMenuItems();
     const [selectedCategory, setSelectedCategory] = useState("Appetizers");
     const navigate= useNavigate()
 
     //filters menu items by category
-    const filteredMenuItems = menuItems.filter((item) => item.category === selectedCategory);
+    const filteredMenuItems = menuData.filter((item) => item.category === selectedCategory);
     const renderMetrics=(item: IMenu)=>{
         navigate(`metrics/${item._id}`)    
 

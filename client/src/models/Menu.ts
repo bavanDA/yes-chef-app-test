@@ -5,12 +5,12 @@ export interface IMenuIngredient {
 
 export interface IMenu {
     _id: string;
-    menuItem: string;
+    name: string;
     category: string;
     ingredients: IMenuIngredient[];
     quantity: number;
     price: number;
     prepTime: number;
-    cartAmount: number;
+    cartAmount?: number;
     image: string;
 }
