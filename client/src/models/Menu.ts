@@ -11,6 +11,6 @@ export interface IMenu {
     quantity: number;
     price: number;
     prepTime: number;
-    cartAmount?: number;
+    cartAmount: number;
     image: string;
 }

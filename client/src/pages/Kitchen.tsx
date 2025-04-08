@@ -94,8 +94,8 @@ export default function Kitchen() {
     // update quantity of each menu item ordered
     completedTickets.forEach((ticket: ITicket) => {
       ticket.items.forEach((menu: IMenu) => {
-        if (menuOrderQuantity.hasOwnProperty(menu.menuItem) && ticket.status==="completed") {
-          menuOrderQuantity[menu.menuItem]+=1*menu.cartAmount;
+        if (menuOrderQuantity.hasOwnProperty(menu.name) && ticket.status==="completed") {
+          menuOrderQuantity[menu.name]+=1*menu.cartAmount;
         }
       });
     });
@@ -127,11 +127,11 @@ export default function Kitchen() {
     //grab the most popular menu items with their order date
     completedTickets.forEach((ticket: ITicket) => {
       ticket.items.forEach((menu: IMenu) => {
-        if (popularMenuItems.includes(menu.menuItem)) {
+        if (popularMenuItems.includes(menu.name)) {
           recommendations.push({
-            menuItem: menu.menuItem,
+            menuItem: menu.name,
             createdAt: ticket.createdAt,
-            quantity: menuOrderQuantity[menu.menuItem] - average,
+            quantity: menuOrderQuantity[menu.name] - average,
             ingredients: menu.ingredients,
           });
         }

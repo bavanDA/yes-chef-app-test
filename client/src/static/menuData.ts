@@ -3,12 +3,27 @@ export const menuData = [
     _id: "1",
     category: "Appetizers",
     name: "Bruschetta",
-    ingredients: [
-      { ingredientName: "Tomatoes", _id: "2" },
-      { ingredientName: "Basil", _id: "3" },
-      { ingredientName: "Garlic", _id: "4" },
-      { ingredientName: "Olive Oil", _id: "5" },
-      { ingredientName: "Baguette", _id: "6" },
+    "ingredients": [
+      {
+        "ingredientName": "Tomatoes",
+        "ingredientId": "1"
+      },
+      {
+        "ingredientName": "Basil",
+        "ingredientId": "2"
+      },
+      {
+        "ingredientName": "Garlic",
+        "ingredientId": "3"
+      },
+      {
+        "ingredientName": "Olive Oil",
+        "ingredientId": "4"
+      },
+      {
+        "ingredientName": "Baguette",
+        "ingredientId": "5"
+      },
     ],
     quantity: 10,
     price: 8.99,
